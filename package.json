@@ -1,0 +1,25 @@
+{
+  "name": "seng513_technical_lecture",
+  "version": "1.0.0",
+  "description": "tech demo for seng513 lecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fnoori/seng513_technical_lecture.git"
+  },
+  "author": "farzamnoori",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fnoori/seng513_technical_lecture/issues"
+  },
+  "homepage": "https://github.com/fnoori/seng513_technical_lecture#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.16",
+    "nodemon": "^1.18.10"
+  }
+}
