@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const http = require('http');
 const port = process.env.PORT || 3000;
@@ -14,6 +15,10 @@ mongoose.connect('mongodb://localhost:27017/tech_demo_lecture', { useNewUrlParse
 });
 
 app.use('/cars', carRoutes);
+
+// enable bodyparser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // error handling
 app.use((req, res, next) => {
