@@ -8,17 +8,19 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 
 const carRoutes = require('./api/routes/cars');
+const userRoutes = require('./api/routes/users');
 
 mongoose.connect('mongodb://localhost:27017/tech_demo_lecture', { useNewUrlParser: true })
 .then().catch(err => {
 	console.log('Mongo Connection Error', err);
 });
 
-app.use('/cars', carRoutes);
-
 // enable bodyparser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use('/cars', carRoutes);
+app.use('/users', userRoutes);
 
 // error handling
 app.use((req, res, next) => {
