@@ -16,8 +16,8 @@ mongoose.connect('mongodb://localhost:27017/tech_demo_lecture', { useNewUrlParse
 });
 
 // enable bodyparser
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/cars', carRoutes);
 app.use('/users', userRoutes);

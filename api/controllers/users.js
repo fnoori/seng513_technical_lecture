@@ -10,7 +10,7 @@ exports.add_new_user = (req, res, next) => {
 
   newUser.save()
   .then(userSaved => {
-    req.status(201).json(userSaved);
+    res.status(201).json(userSaved);
   }).catch(saveErr => {
     return res.status(500).json({'Error': saveErr});
   });
