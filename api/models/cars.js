@@ -1,5 +1,7 @@
+// 1 - import mongoose
 const mongoose = require('mongoose');
 
+// 2 - define schema
 const vehicleSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     'Make': { type: String, required: true, maxlength: 9 },
@@ -10,4 +12,5 @@ const vehicleSchema = mongoose.Schema({
     'Doors': { type: Number, required: true }
 });
 
+// 3 - export schema
 module.exports = mongoose.model('Car', vehicleSchema);

@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 
+
+// import mongoose
+const mongoose = require('mongoose');
+
+
+const bodyParser = require('body-parser');
 const http = require('http');
 const port = process.env.PORT || 3000;
 const server = http.createServer(app);
@@ -10,10 +14,13 @@ const server = http.createServer(app);
 const carRoutes = require('./api/routes/cars');
 const userRoutes = require('./api/routes/users');
 
+
+// connect to mongodb
 mongoose.connect('mongodb://localhost:27017/tech_demo_lecture', { useNewUrlParser: true })
 .then().catch(err => {
 	console.log('Mongo Connection Error', err);
 });
+
 
 // enable bodyparser
 app.use(bodyParser.json());
