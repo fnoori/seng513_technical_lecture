@@ -16,6 +16,7 @@ const userRoutes = require('./api/routes/users');
 
 
 // connect to mongodb
+// if using newer versions of mongodb, must add { useNewUrlParser: true }
 mongoose.connect('mongodb://localhost:27017/tech_demo_lecture', { useNewUrlParser: true })
 .then().catch(err => {
 	console.log('Mongo Connection Error', err);
