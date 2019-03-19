@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 
+// install " npm install --save mongoose "
 // import mongoose
 const mongoose = require('mongoose');
 
